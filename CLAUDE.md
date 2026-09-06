@@ -65,6 +65,16 @@ Job titles per role must match the resume verbatim (`AI Engineer / Data Scientis
 - No lorem ipsum ever ships. If content is missing, block the section behind a `TODO(content)` comment and surface it in the response.
 - Layered disclosure: the site shows numbers and architecture at a high level. It does not show internal failure modes, stakeholder dynamics, or exact evaluation methodology — those are interview material and stay off the site.
 
+### Prose discipline (no AI-generated tells)
+- No em-dashes in body copy. Use periods or commas instead. Em-dashes in code comments are fine, but not in user-facing prose.
+- No "It's not just X, it's Y" constructions.
+- No words: delve, delving, tapestry, landscape (as metaphor), robust, leverage, streamline, empower, seamless, cutting-edge, best-in-class, world-class, revolutionize, unlock (as verb metaphor).
+- No sentence openers: Moreover, Furthermore, Additionally, In today's, In the modern era.
+- No balanced tricolons ("X, Y, and Z" three times in a paragraph). One is fine, more reads as AI cadence.
+- No hedging language: perhaps, arguably, in many ways, one could say.
+- Prefer short declarative sentences. If a sentence has three commas, it likely needs to become two sentences.
+- When you're about to write an em-dash, ask: would a period work here? Usually yes.
+
 ## SEO and metadata (non-negotiable)
 - Root `layout.tsx` exports `metadata` with a real title template, description that names his stack, OG image, Twitter card, and canonical URL.
 - `src/app/opengraph-image.tsx` generates a dynamic OG image with his name and title using Next's built-in image generation.
