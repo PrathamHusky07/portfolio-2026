@@ -8,7 +8,7 @@ Content source of truth: `_reference/content.md`. Do not invent copy — pull fr
 The old React project lives in `_reference/` for asset extraction only. Do not port its structure, styling, or dependencies. Do not edit anything under `_reference/`.
 
 ## Stack
-- Next.js 15 (App Router) + React 19 + TypeScript (strict mode)
+- Next.js 16 (App Router) + React 19 + TypeScript (strict mode)
 - Tailwind CSS v4
 - Framer Motion for scroll animations (used sparingly, respects `prefers-reduced-motion`)
 - shadcn/ui for base components (Button, Card, form primitives) — installed on demand, no wholesale copy
@@ -28,18 +28,18 @@ Default model is `claude-sonnet-4-6`. Escalate to Opus (via `/model opus`) only 
 Run `npm run build` and `npx tsc --noEmit` before saying a change is done. A "working" dev server is not evidence the build passes.
 
 ## Layout
-- `app/` — App Router pages. `layout.tsx` sets metadata and fonts. `page.tsx` is the single-page portfolio.
-- `app/components/` — Section components (Hero, About, Experience, Projects, Tech, Contact).
-- `app/components/ui/` — shadcn primitives.
-- `content/` — TypeScript files exporting typed content arrays (`experience.ts`, `projects.ts`, `tech.ts`). Content lives here, not inline in components. Source values from `_reference/content.md`.
+- `src/app/` — App Router pages. `layout.tsx` sets metadata and fonts. `page.tsx` is the single-page portfolio.
+- `src/components/` — Section components (Hero, About, Experience, Projects, Tech, Contact).
+- `src/components/ui/` — shadcn primitives.
+- `src/content/` — TypeScript files exporting typed content arrays (`experience.ts`, `projects.ts`, `tech.ts`). Content lives here, not inline in components. Source values from `_reference/content.md`.
 - `public/` — Static assets. Project images are `public/projects/`. Favicon and OG assets live here.
-- `lib/` — Utilities (`cn` helper, analytics wrapper).
+- `src/lib/` — Utilities (`cn` helper, analytics wrapper).
 - `_reference/` — Old React project + `content.md`. Read-only. Never edit, never import from source code.
 
 ## Conventions
 - Server Components by default. Add `"use client"` only when a component needs state, effects, or browser APIs.
 - Every component is a named export with a typed props interface. No `React.FC`.
-- Content is typed. `content/projects.ts` exports `Project[]` where `Project` has a discriminated status (`shipped` | `in_progress`) and a `featured: boolean`. Metrics are structured (`{ value: string; label: string }`), not free-text.
+- Content is typed. `src/content/projects.ts` exports `Project[]` where `Project` has a discriminated status (`shipped` | `in_progress`) and a `featured: boolean`. Metrics are structured (`{ value: string; label: string }`), not free-text.
 - Tailwind classes live inline. No CSS files except `globals.css`. Design tokens live in `tailwind.config.ts` under `theme.extend`.
 - One custom font pair maximum. Sans for body, a display face for headings. Loaded via `next/font/google` for zero layout shift.
 - No emoji in production copy. No cyan-on-black contact info in the hero. No phone number anywhere on the site. No resume PDF hosted on the site.
@@ -67,8 +67,8 @@ Job titles per role must match the resume verbatim (`AI Engineer / Data Scientis
 
 ## SEO and metadata (non-negotiable)
 - Root `layout.tsx` exports `metadata` with a real title template, description that names his stack, OG image, Twitter card, and canonical URL.
-- `app/opengraph-image.tsx` generates a dynamic OG image with his name and title using Next's built-in image generation.
-- `public/robots.txt` and `app/sitemap.ts` exist and are correct.
+- `src/app/opengraph-image.tsx` generates a dynamic OG image with his name and title using Next's built-in image generation.
+- `public/robots.txt` and `src/app/sitemap.ts` exist and are correct.
 - Structured data: JSON-LD `Person` schema in the root layout with `sameAs` for LinkedIn and GitHub.
 
 ## Do not
