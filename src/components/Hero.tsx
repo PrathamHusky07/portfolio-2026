@@ -39,14 +39,14 @@ export function Hero() {
       <HeroSpotlight />
       <div className="w-full max-w-5xl mx-auto px-6">
         {/* Headline */}
-        <h1 id="hero-headline" className="font-heading font-bold tracking-tight">
-          <span className="block text-5xl sm:text-6xl lg:text-7xl leading-[1.1] text-foreground">
+        <h1 id="hero-headline" className="font-heading font-bold tracking-tight flex flex-col">
+          <span className="text-5xl sm:text-6xl lg:text-7xl leading-[1.1] text-foreground">
             AI Analytics{' '}
             <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
               Engineer
             </span>
           </span>
-          <span className="block text-2xl sm:text-3xl lg:text-4xl leading-snug text-muted-foreground mt-3 lg:mt-4">
+          <span className="text-2xl sm:text-3xl lg:text-4xl leading-snug text-muted-foreground mt-3 lg:mt-4">
             Shipping production AI where analytics engineering meets applied ML.
           </span>
         </h1>
