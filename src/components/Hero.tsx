@@ -35,7 +35,7 @@ export function Hero({}: HeroProps) {
     <header
       id="hero"
       aria-labelledby="hero-headline"
-      className="flex items-center py-24 md:py-32 lg:py-40"
+      className="flex items-center py-20 md:py-28"
     >
       <div className="w-full max-w-5xl mx-auto px-6">
         {/* Headline */}
@@ -106,7 +106,7 @@ export function Hero({}: HeroProps) {
             <GitHubIcon size={18} />
           </a>
           <a
-            href="mailto:prathameshkulkarni23@gmail.com"
+            href="mailto:prathamesh.kulkarni2398@gmail.com"
             aria-label="Email"
             className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
           >

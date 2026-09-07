@@ -2,7 +2,7 @@ interface AboutProps {}
 
 export function About({}: AboutProps) {
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-24 md:py-32">
+    <section id="about" aria-labelledby="about-heading" className="py-16 md:py-20">
       <div className="max-w-2xl mx-auto px-6">
         <h2
           id="about-heading"

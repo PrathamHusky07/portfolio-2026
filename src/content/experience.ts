@@ -13,7 +13,7 @@ export const experience: Experience[] = [
     location: 'Texas, USA',
     dates: 'February 2025 — July 2026',
     summary:
-      'Shipped a multi-agent keyword system on LangGraph + Gemini + SBERT, containerized on Kubernetes, serving ~1M+ daily queries at ~97% accuracy and reducing ad spend by ~14%. Built the AI analytics platform behind it.',
+      'Shipped a multi-agent keyword system on LangGraph, Gemini, and SBERT, containerized on Kubernetes. It serves ~1M+ daily queries at ~97% accuracy and cut ad spend by ~14%.',
   },
   {
     title: 'Analytics Engineer Co-op',
@@ -21,7 +21,7 @@ export const experience: Experience[] = [
     location: 'Massachusetts, USA',
     dates: 'January 2024 — June 2024',
     summary:
-      'Architected the AWS ETL/ELT foundation (Glue, Redshift, S3) that became the single reporting source for analytics and finance — $150K in annual savings, 18% data accuracy lift, dbt modeling across staging and mart layers.',
+      'Architected the AWS ETL/ELT foundation (Glue, Redshift, S3, dbt) that became the single source of truth for analytics and finance. Delivered $150K in annual savings and an 18% data accuracy lift.',
   },
   {
     title: 'Data Analytics Engineer',
@@ -29,7 +29,7 @@ export const experience: Experience[] = [
     location: 'Mumbai, India',
     dates: 'July 2020 — August 2022',
     summary:
-      'Built the production ETL and CI/CD pipelines that ran the operations and sales analytics stack. Cut infra spend by ~$20K through workload optimization; forecasting pipelines improved planning accuracy by 25%.',
+      'Built the production ETL and CI/CD pipelines powering the operations and sales analytics stack. Cut infra spend by ~$20K through workload optimization. Forecasting pipelines improved planning accuracy by 25%.',
   },
   {
     title: 'Data Science Intern',
@@ -37,6 +37,6 @@ export const experience: Experience[] = [
     location: 'Delhi, India',
     dates: 'January 2020 — June 2020',
     summary:
-      'Led a five-person team building a customer choice–based recommendation system. Repeat visits up 25%.',
+      'Owned the modeling layer of a choice-based recommendation system built with a five-person team. Repeat visits rose 25%.',
   },
 ]

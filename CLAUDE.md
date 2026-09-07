@@ -3,7 +3,7 @@
 ## What this project is
 A personal portfolio site for an AI Analytics Engineer actively interviewing for Analytics Engineer, AI Engineer, and Forward Deployed Engineer roles. This site is a recruiter conversion tool, not a hobby project. Every decision optimizes for: (1) a recruiter deciding to reply within 30 seconds of landing, and (2) a technical screener respecting the code under the hood.
 
-Content source of truth: `_reference/content.md`. Do not invent copy — pull from that file. If content is missing for a section, stop and ask.
+Content source of truth: `content.md` (project root). Do not invent copy — pull from that file. If content is missing for a section, stop and ask.
 
 The old React project lives in `_reference/` for asset extraction only. Do not port its structure, styling, or dependencies. Do not edit anything under `_reference/`.
 
@@ -31,10 +31,10 @@ Run `npm run build` and `npx tsc --noEmit` before saying a change is done. A "wo
 - `src/app/` — App Router pages. `layout.tsx` sets metadata and fonts. `page.tsx` is the single-page portfolio.
 - `src/components/` — Section components (Hero, About, Experience, Projects, Tech, Contact).
 - `src/components/ui/` — shadcn primitives.
-- `src/content/` — TypeScript files exporting typed content arrays (`experience.ts`, `projects.ts`, `tech.ts`). Content lives here, not inline in components. Source values from `_reference/content.md`.
+- `src/content/` — TypeScript files exporting typed content arrays (`experience.ts`, `projects.ts`, `tech.ts`). Content lives here, not inline in components. Source values from `content.md`.
 - `public/` — Static assets. Project images are `public/projects/`. Favicon and OG assets live here.
 - `src/lib/` — Utilities (`cn` helper, analytics wrapper).
-- `_reference/` — Old React project + `content.md`. Read-only. Never edit, never import from source code.
+- `_reference/` — Old React project and reference assets. Read-only. Never edit, never import from source code.
 
 ## Conventions
 - Server Components by default. Add `"use client"` only when a component needs state, effects, or browser APIs.
@@ -85,7 +85,7 @@ Job titles per role must match the resume verbatim (`AI Engineer / Data Scientis
 - Do not add features not requested (no dark/light toggle unless asked, no i18n, no CMS, no blog for v1).
 - Do not install a UI kit that bundles more than the components used. shadcn/ui components are copied in per-component; MUI, Chakra, Radix-wholesale are off-limits.
 - Do not add state management libraries.
-- Do not touch `_reference/`.
+- Do not touch `_reference/`. `content.md` at project root is the editable content source of truth.
 - Do not commit `.env*`, `.vercel/`, `node_modules/`, or `.claude/settings.local.json`.
 - Do not add AI-attribution to commit messages (no "Co-authored-by: Claude", no "🤖 Generated with Claude Code").
 - Do not use `any`. If a type is genuinely unknown, use `unknown` and narrow.

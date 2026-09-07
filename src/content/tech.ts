@@ -15,8 +15,6 @@ export const tech: readonly TechGroup[] = [
       'LangChain',
       'Gemini',
       'Vertex AI',
-      'RAG',
-      'Vector Embeddings',
       'Hugging Face',
       'OpenAI',
     ],
