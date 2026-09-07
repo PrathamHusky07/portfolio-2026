@@ -2,7 +2,7 @@
 
 Personal portfolio website.
 
-**Live:** [portfolio-2026.vercel.app](https://portfolio-2026.vercel.app)
+**Live:** [portfolio-2026.vercel.app](https://prathameshkulkarni.vercel.app)
 
 ---
 
