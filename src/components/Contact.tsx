@@ -59,7 +59,7 @@ export function Contact() {
             className="absolute left-0 top-0 w-1 h-full bg-[var(--hover-accent)] rounded-l-lg transition-colors duration-300 group-hover:bg-primary"
           />
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Open to Analytics Engineer, AI Engineer, and Forward-Deployed Engineer roles. Best
+            Open to AI Engineer, Analytics Engineer, and Forward-Deployed Engineer roles. Best
             reached by email or LinkedIn.
           </p>
         </div>
