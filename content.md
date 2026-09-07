@@ -21,15 +21,15 @@ the Contact section or the linked profiles (LinkedIn, GitHub, Email).
 ## Hero section
 
 **Headline (H1):**
-AI Analytics Engineer.
+AI Analytics Engineer
 Shipping production AI where analytics engineering meets applied ML.
 
 **Subheadline (≤ 25 words):**
-Built multi-agent systems handling ~1M+ daily queries and analytics platforms driving $1M+ in business impact across advertising, SaaS, and finance.
+Built multi-agent systems, RAG pipelines, and LLM-as-judge evaluation frameworks powering analytics platforms with $1M+ in business impact across advertising, SaaS, and finance.
 
 **Above-the-fold metric strip (3 stats, no captions):**
 - $1M+ business impact
-- 1M+ daily production queries
+- Multi-Agents, RAG, Evals, Fine-Tuning
 - 4+ years shipping
 
 **Primary CTA:** See Work → `#projects`

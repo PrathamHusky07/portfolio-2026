@@ -1,6 +1,5 @@
 import { Mail } from 'lucide-react'
-
-interface HeroProps {}
+import { HeroSpotlight } from './HeroSpotlight'
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -30,18 +29,22 @@ function LinkedInIcon({ size = 18 }: { size?: number }) {
   )
 }
 
-export function Hero({}: HeroProps) {
+export function Hero() {
   return (
     <header
       id="hero"
       aria-labelledby="hero-headline"
-      className="flex items-center py-20 md:py-28"
+      className="relative overflow-hidden flex items-center pt-20 md:pt-28 pb-8 md:pb-12"
     >
+      <HeroSpotlight />
       <div className="w-full max-w-5xl mx-auto px-6">
         {/* Headline */}
         <h1 id="hero-headline" className="font-heading font-bold tracking-tight">
           <span className="block text-5xl sm:text-6xl lg:text-7xl leading-[1.1] text-foreground">
-            AI Analytics Engineer.
+            AI Analytics{' '}
+            <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+              Engineer
+            </span>
           </span>
           <span className="block text-2xl sm:text-3xl lg:text-4xl leading-snug text-muted-foreground mt-3 lg:mt-4">
             Shipping production AI where analytics engineering meets applied ML.
@@ -50,9 +53,9 @@ export function Hero({}: HeroProps) {
 
         {/* Subheadline */}
         <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-2xl">
-          Built multi-agent systems handling ~1M+ daily queries and analytics
-          platforms driving $1M+ in business impact across advertising, SaaS,
-          and finance.
+          Built multi-agent systems, RAG pipelines, and LLM-as-judge evaluation
+          frameworks powering analytics platforms with $1M+ in business impact
+          across advertising, SaaS, and finance.
         </p>
 
         {/* Metric strip */}
@@ -64,7 +67,7 @@ export function Hero({}: HeroProps) {
             $1M+ business impact
           </li>
           <li className="py-4 md:py-0 md:px-8 border-b md:border-b-0 md:border-r border-border/40">
-            1M+ daily production queries
+            Multi-Agents, RAG, Evals, Fine-Tuning
           </li>
           <li className="py-4 md:py-0 md:pl-8">4+ years shipping</li>
         </ul>
@@ -73,13 +76,13 @@ export function Hero({}: HeroProps) {
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
             href="#projects"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             See Work
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex items-center justify-center rounded-md border border-foreground/20 px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Get in Touch
           </a>
@@ -92,7 +95,7 @@ export function Hero({}: HeroProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+            className="text-muted-foreground transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
           >
             <LinkedInIcon size={18} />
           </a>
@@ -101,14 +104,14 @@ export function Hero({}: HeroProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+            className="text-muted-foreground transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
           >
             <GitHubIcon size={18} />
           </a>
           <a
             href="mailto:prathamesh.kulkarni2398@gmail.com"
             aria-label="Email"
-            className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+            className="text-muted-foreground transition-colors duration-150 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
           >
             <Mail size={18} aria-hidden="true" />
           </a>

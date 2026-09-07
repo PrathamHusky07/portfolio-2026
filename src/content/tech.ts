@@ -24,7 +24,7 @@ export const tech: readonly TechGroup[] = [
     items: ['PyTorch', 'Scikit-Learn', 'XGBoost', 'TensorFlow'],
   },
   {
-    category: 'MLOps & Infrastructure',
+    category: 'MLOps',
     items: [
       'Databricks',
       'MLflow',

@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Reference assets only — do not lint
+    "_reference/**",
   ]),
 ]);
 

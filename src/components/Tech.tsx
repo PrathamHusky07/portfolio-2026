@@ -1,9 +1,31 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import { tech } from '@/content/tech'
 
 export function Tech() {
   return (
-    <section id="tech" aria-labelledby="tech-heading" className="py-16 md:py-20">
+    <motion.section
+      id="tech"
+      aria-labelledby="tech-heading"
+      className="py-16 md:py-20"
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
       <div className="max-w-4xl mx-auto px-6">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="text-xs tracking-widest uppercase text-muted-foreground/60">04</span>
+          <motion.div
+            className="h-px w-12 bg-primary/60"
+            style={{ originX: 0 }}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+          />
+        </div>
         <h2
           id="tech-heading"
           className="font-heading font-bold text-3xl sm:text-4xl tracking-tight text-foreground"
@@ -20,7 +42,7 @@ export function Tech() {
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded border border-border/40 px-2.5 py-1 text-xs text-muted-foreground"
+                    className="rounded border border-border/40 px-2.5 py-1 text-xs text-muted-foreground hover:bg-foreground/5 hover:border-foreground/25 hover:text-foreground transition-colors duration-150"
                   >
                     {item}
                   </span>
@@ -30,6 +52,6 @@ export function Tech() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

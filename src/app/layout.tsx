@@ -17,7 +17,8 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 })
 
-const CANONICAL_URL = 'https://prathameshkulkarni.com'
+const CANONICAL_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://portfolio-2026.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(CANONICAL_URL),

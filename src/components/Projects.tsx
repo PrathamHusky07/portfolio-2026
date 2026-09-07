@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import { projects, type Project } from '@/content/projects'
 
 const featureProjects = projects.filter((p) => p.rank <= 2)
@@ -21,8 +24,8 @@ function TechChips({
 }) {
   const cls =
     size === 'sm'
-      ? 'px-2 py-0.5 text-xs border border-border/40 rounded text-muted-foreground'
-      : 'px-2.5 py-1 text-xs border border-border/40 rounded text-muted-foreground'
+      ? 'px-2 py-0.5 text-xs border border-border/40 rounded text-muted-foreground hover:bg-foreground/5 hover:border-foreground/25 hover:text-foreground transition-colors duration-150'
+      : 'px-2.5 py-1 text-xs border border-border/40 rounded text-muted-foreground hover:bg-foreground/5 hover:border-foreground/25 hover:text-foreground transition-colors duration-150'
   return (
     <div className="flex flex-wrap gap-2">
       {tech.map((t) => (
@@ -43,7 +46,7 @@ function GitHubLink({ href }: { href?: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-sm text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
     >
       GitHub ↗
     </a>
@@ -52,8 +55,27 @@ function GitHubLink({ href }: { href?: string }) {
 
 export function Projects() {
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="py-16 md:py-20">
+    <motion.section
+      id="projects"
+      aria-labelledby="projects-heading"
+      className="py-16 md:py-20"
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
       <div className="max-w-4xl mx-auto px-6">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="text-xs tracking-widest uppercase text-muted-foreground/60">03</span>
+          <motion.div
+            className="h-px w-12 bg-primary/60"
+            style={{ originX: 0 }}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+          />
+        </div>
         <h2
           id="projects-heading"
           className="font-heading font-bold text-3xl sm:text-4xl tracking-tight text-foreground"
@@ -64,7 +86,10 @@ export function Projects() {
         {/* Feature cards */}
         <div className="mt-12 space-y-8">
           {featureProjects.map((project) => (
-            <article key={project.title} className="border border-border/40 rounded-lg p-8">
+            <article
+              key={project.title}
+              className="border border-border/40 rounded-lg p-8 hover:border-primary/40 hover:bg-[var(--hover-bg)] hover:-translate-y-1 hover:shadow-[0_8px_32px_-8px_var(--primary)] transition-all duration-300"
+            >
               <div className="flex items-start justify-between flex-wrap gap-4">
                 <h3 className="font-heading font-bold text-2xl sm:text-3xl text-foreground leading-tight">
                   {project.title}
@@ -128,7 +153,7 @@ export function Projects() {
           {compactProjects.map((project) => (
             <article
               key={project.title}
-              className="border border-border/40 rounded-lg p-6 hover:border-border transition-colors"
+              className="border border-border/40 rounded-lg p-6 hover:border-primary/40 hover:bg-[var(--hover-bg)] hover:-translate-y-1 hover:shadow-[0_8px_32px_-8px_var(--primary)] transition-all duration-300"
             >
               <h3 className="font-heading font-semibold text-lg text-foreground">
                 {project.title}
@@ -147,6 +172,6 @@ export function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

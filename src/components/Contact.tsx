@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import { Mail } from 'lucide-react'
 
 function GitHubIcon() {
@@ -17,24 +20,49 @@ function LinkedInIcon() {
 }
 
 const btnBase =
-  'inline-flex items-center gap-2 rounded-md px-6 py-3.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring w-full sm:w-auto justify-center sm:justify-start'
+  'inline-flex items-center gap-2 rounded-md px-6 py-3.5 text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto justify-center sm:justify-start'
 const btnPrimary = `${btnBase} bg-primary text-primary-foreground hover:bg-primary/90`
-const btnSecondary = `${btnBase} border border-border text-foreground hover:bg-secondary`
+const btnSecondary = `${btnBase} border border-foreground/20 text-foreground hover:bg-foreground/5`
 
 export function Contact() {
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-16 md:py-20">
+    <motion.section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="py-16 md:py-20"
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+    >
       <div className="max-w-4xl mx-auto px-6">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="text-xs tracking-widest uppercase text-muted-foreground/60">05</span>
+          <motion.div
+            className="h-px w-12 bg-primary/60"
+            style={{ originX: 0 }}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+          />
+        </div>
         <h2
           id="contact-heading"
           className="font-heading font-bold text-3xl sm:text-4xl tracking-tight text-foreground"
         >
           Get in touch
         </h2>
-        <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          Open to Analytics Engineer, AI Engineer, and Forward-Deployed Engineer roles. Best
-          reached by email or LinkedIn.
-        </p>
+        <div className="group relative rounded-lg border border-border/40 bg-foreground/[0.015] p-6 md:p-8 overflow-hidden hover:border-primary/30 hover:bg-[var(--hover-bg)] transition-all duration-300 mt-6 mb-8 max-w-2xl">
+          <span
+            aria-hidden="true"
+            className="absolute left-0 top-0 w-1 h-full bg-[var(--hover-accent)] rounded-l-lg transition-colors duration-300 group-hover:bg-primary"
+          />
+          <p className="text-lg leading-relaxed text-muted-foreground">
+            Open to Analytics Engineer, AI Engineer, and Forward-Deployed Engineer roles. Best
+            reached by email or LinkedIn.
+          </p>
+        </div>
         <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4">
           <a href="mailto:prathamesh.kulkarni2398@gmail.com" className={btnPrimary}>
             <Mail size={16} aria-hidden="true" />
@@ -60,6 +88,6 @@ export function Contact() {
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
