@@ -1,5 +1,6 @@
 import { Mail } from 'lucide-react'
 import { HeroSpotlight } from './HeroSpotlight'
+import { heroMetrics } from '@/content/hero'
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -63,13 +64,19 @@ export function Hero() {
           role="list"
           className="mt-10 flex flex-col md:flex-row md:items-center text-sm font-medium text-muted-foreground"
         >
-          <li className="py-4 md:py-0 md:pr-8 border-b md:border-b-0 md:border-r border-border/40">
-            $1M+ business impact
-          </li>
-          <li className="py-4 md:py-0 md:px-8 border-b md:border-b-0 md:border-r border-border/40">
-            Multi-Agents, RAG, Evals, Fine-Tuning
-          </li>
-          <li className="py-4 md:py-0 md:pl-8">4+ years shipping</li>
+          {heroMetrics.map((metric, i) => {
+            const cls =
+              i === 0
+                ? 'py-4 md:py-0 md:pr-8 border-b md:border-b-0 md:border-r border-border/40'
+                : i === heroMetrics.length - 1
+                ? 'py-4 md:py-0 md:pl-8'
+                : 'py-4 md:py-0 md:px-8 border-b md:border-b-0 md:border-r border-border/40'
+            return (
+              <li key={metric.label} className={cls}>
+                {metric.value ? `${metric.value} ${metric.label}` : metric.label}
+              </li>
+            )
+          })}
         </ul>
 
         {/* CTAs */}

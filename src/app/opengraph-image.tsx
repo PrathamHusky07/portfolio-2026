@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { heroMetrics } from '@/content/hero'
 
 export const runtime = 'nodejs'
 export const alt = 'Prathamesh Kulkarni — AI Analytics Engineer'
@@ -84,13 +85,9 @@ export default async function OGImage() {
             gap: '40px',
           }}
         >
-          {[
-            '$1M+ business impact',
-            '1M+ daily production queries',
-            '4+ years shipping',
-          ].map((stat) => (
+          {heroMetrics.map((metric) => (
             <div
-              key={stat}
+              key={metric.label}
               style={{
                 fontFamily: 'Space Grotesk',
                 fontWeight: 400,
@@ -98,7 +95,7 @@ export default async function OGImage() {
                 color: '#6b7280',
               }}
             >
-              {stat}
+              {metric.value ? `${metric.value} ${metric.label}` : metric.label}
             </div>
           ))}
         </div>
